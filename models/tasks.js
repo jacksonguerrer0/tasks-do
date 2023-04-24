@@ -13,6 +13,13 @@ class Tasks {
     this._all_tasks[task.id] = task
   }
 
+  loadTasks ( task = []) {
+    console.log(task)
+    task.forEach((task) => {
+      this._all_tasks[task.id] = task
+    })
+  }
+
   get listTasks () {
     const listTasks = []
 

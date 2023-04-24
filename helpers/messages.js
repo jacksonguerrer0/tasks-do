@@ -7,12 +7,12 @@ const showMenu = () => {
     console.log("           Select a option".green)
     console.log("|||||||||||||||||||||||||||||||||||||\n".green)
 
-    console.log(`${ '1'.green }. Create taks`)
-    console.log(`${ '2'.green }. List taks`)
-    console.log(`${ '3'.green }. List taks complete`)
-    console.log(`${ '4'.green }. List taks pending`)
-    console.log(`${ '5'.green }. Complete taks`)
-    console.log(`${ '6'.green }. Delete taks`)
+    console.log(`${ '1'.green }. Create task`)
+    console.log(`${ '2'.green }. List task`)
+    console.log(`${ '3'.green }. List task complete`)
+    console.log(`${ '4'.green }. List task pending`)
+    console.log(`${ '5'.green }. Complete task`)
+    console.log(`${ '6'.green }. Delete task`)
     console.log(`${ '0'.green }. Leave\n`)
 
     const readline = require('readline').createInterface({

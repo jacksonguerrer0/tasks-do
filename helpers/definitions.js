@@ -5,12 +5,12 @@ const questionMenu = [
     default: 'Default value',
     message: "What do you want to do?",
     choices: [
-      {name: '1. Create taks', value: '1'},
-      {name: '2. List taks', value: '2'},
-      {name: '3. List taks complete', value: '3'},
-      {name: '4. List taks pending', value: '4'},
-      {name: '5. Complete taks', value: '5'},
-      {name: '6. Delete taks', value: '6'},
+      {name: '1. Create task', value: '1'},
+      {name: '2. List task', value: '2'},
+      {name: '3. List task complete', value: '3'},
+      {name: '4. List task pending', value: '4'},
+      {name: '5. Complete task', value: '5'},
+      {name: '6. Delete task', value: '6'},
       {name: '0. Leave', value: '0'},
   ]
   }

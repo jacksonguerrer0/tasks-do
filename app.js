@@ -20,7 +20,7 @@ const main = async() => {
         tasks.addTask(description)
         break;
       case '2':
-        console.log("Tasks: ", tasks._all_tasks)
+        console.log(tasks.listTasks)
         break
     }
 

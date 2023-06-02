@@ -27,8 +27,8 @@ const questionConfirm = [
 const questionAddTask = [
   {
     type: 'input',
-    name: 'description',
-    message: 'Add description for task: ',
+    name: 'title',
+    message: 'Add title for task: ',
     validate: function (input) {
       if (input.length === 0 ) {
         return 'Enter a value'
@@ -39,9 +39,36 @@ const questionAddTask = [
   }
 ]
 
+const questionSelectTask = [
+  {
+    type: 'list',
+    name: 'questionDelete',
+    default: 'Default value',
+    message: "Delete",
+    choices: []
+  }
+]
+
+const questionConfirmDeleteTask = [
+  {
+    type: 'confirm',
+    name: 'confirmDelete',
+    message: 'Are you sure to delete this task?'
+  }
+]
+
+const questionSelectTasks = [
+  {
+    type: 'checkbox',
+    name: 'confirmDelete',
+    message: 'Are you sure to delete this task?'
+  }
+]
 
 module.exports = {
   questionMenu,
   questionConfirm,
-  questionAddTask
+  questionAddTask,
+  questionSelectTask,
+  questionConfirmDeleteTask
 }

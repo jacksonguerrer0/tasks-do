@@ -28,7 +28,7 @@ class Tasks {
     })
   }
 
-  listTasks () {
+  get listTasks () {
     const listTasks = []
 
     Object.keys(this._all_tasks).forEach((key) => {
@@ -40,7 +40,7 @@ class Tasks {
   }
 
   listTasksComplete () {
-    const taksArr = this.listTasks()
+    const taksArr = this.listTasks
     let formatTasks = ''
 
     taksArr.forEach((task, i) => {
@@ -53,7 +53,7 @@ class Tasks {
   }
 
   listTasksByStatus (complete=true) {
-    const taksArr = this.listTasks()
+    const taksArr = this.listTasks
     let formatTasks = ''
     let enumeration = 0
 
@@ -84,12 +84,14 @@ class Tasks {
       }
     })
 
-    this.listTasks().forEach((task) => {
-      if(!ids.includes(task.id)) {
-        task.completed_at = null
+    this.listTasks.forEach((task) => {
+      const id = task.id
+
+      if(!ids.includes(id)) {
+        this._all_tasks[id].completed_at = null
       }
     })
-    return this.listTasks()
+    return this.listTasks
   }
 }
 

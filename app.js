@@ -35,13 +35,13 @@ const main = async() => {
         console.log(tasks.listTasksByStatus(false))
         break
       case '5':
-        const tasksSelected =  await checkList(tasks.listTasks())
+        const tasksSelected =  await checkList(tasks.listTasks)
         console.log('Tskss', tasksSelected)
 
         tasks.updateStatus(tasksSelected)
         break
       case '6':
-        const id = await selectTask(tasks.listTasks())
+        const id = await selectTask(tasks.listTasks)
 
         if(id !== 0) {
           const isConfirmed = await confirmDeleteTask()
@@ -54,7 +54,7 @@ const main = async() => {
         break
     }
 
-    persistFile(tasks.listTasks())
+    persistFile(tasks.listTasks)
 
     if ( opt !== '0' ) await pause()
   } while (opt !== '0')

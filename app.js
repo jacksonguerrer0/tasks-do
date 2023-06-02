@@ -1,6 +1,6 @@
 require('colors')
 // const { showMenu, pause } = require('./helpers/messages')
-const { showMenu, pause, addTaskInput, selectTask, confirmDeleteTask } = require('./helpers/inquirer')
+const { showMenu, pause, addTaskInput, selectTask, confirmDeleteTask, checkList } = require('./helpers/inquirer')
 const { persistFile, readDB } = require('./helpers/persistFile')
 const Tasks = require('./models/tasks')
 
@@ -35,7 +35,8 @@ const main = async() => {
         console.log(tasks.listTasksByStatus(false))
         break
       case '5':
-        console.log(tasks.listTasksByStatus(false))
+        const tasksSelected =  await checkList(tasks.listTasks())
+        console.log('Tskss', tasksSelected)
         break
       case '6':
         const id = await selectTask(tasks.listTasks())

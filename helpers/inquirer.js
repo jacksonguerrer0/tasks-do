@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const { questionConfirm, questionMenu, questionAddTask, questionSelectTask, questionConfirmDeleteTask } = require('./definitions')
+const { questionConfirm, questionMenu, questionAddTask, questionSelectTask, questionConfirmDeleteTask, questionCheckList } = require('./definitions')
 // require('colors')
 
 const showMenu = async () => {
@@ -51,10 +51,29 @@ const confirmDeleteTask = async () => {
   return confirmDelete
 }
 
+const checkList = async (listTasks = []) => {
+  const choices = listTasks.map((task, i) => {
+    const enumeration = `${i + 1}. `.green
+
+    return {
+      name: enumeration + `${task.title}`,
+      value: task.id,
+      checked: task.completed_at ? true : false
+    }
+  })
+
+  questionCheckList[0].choices = choices
+  const { selectTasks } = await inquirer.prompt(questionCheckList)
+
+  return selectTasks
+}
+
+
 module.exports = {
   showMenu,
   pause,
   addTaskInput,
   selectTask,
-  confirmDeleteTask
+  confirmDeleteTask,
+  checkList
 }

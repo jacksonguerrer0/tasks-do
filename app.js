@@ -37,6 +37,8 @@ const main = async() => {
       case '5':
         const tasksSelected =  await checkList(tasks.listTasks())
         console.log('Tskss', tasksSelected)
+
+        tasks.updateStatus(tasksSelected)
         break
       case '6':
         const id = await selectTask(tasks.listTasks())

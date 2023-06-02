@@ -74,6 +74,23 @@ class Tasks {
     })
     return formatTasks
   }
+
+  updateStatus (ids = []) {
+    ids.forEach((id) => {
+      const task = this._all_tasks[id]
+
+      if(!task.completed_at) {
+        task.completed_at = new Date().getTime()
+      }
+    })
+
+    this.listTasks().forEach((task) => {
+      if(!ids.includes(task.id)) {
+        task.completed_at = null
+      }
+    })
+    return this.listTasks()
+  }
 }
 
 module.exports = Tasks
